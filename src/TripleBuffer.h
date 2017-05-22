@@ -14,7 +14,7 @@ namespace libCameron {
 
 using namespace AVR;
 
-template <u1 size, bool readInterrupt, bool writeInterrupt = !readInterrupt>
+template <typename Type, bool readInterrupt, bool writeInterrupt = !readInterrupt>
 class TripleBuffer {
 
  // The three buffers of the Triple Buffer
@@ -22,17 +22,17 @@ class TripleBuffer {
  /**
   * The RED buffer
   */
- u1 rBuffer[size];
+ Type rBuffer;
 
  /**
   * The GREEN buffer
   */
- u1 gBuffer[size];
+ Type gBuffer;
 
  /**
   * The BLUE buffer
   */
- u1 bBuffer[size];
+ Type bBuffer;
 
  /**
   * All possible buffer states.
@@ -72,13 +72,13 @@ public:
   * Get the buffer that should be written to
   * @return
   */
- u1 * getWriteBuffer();
+ Type * getWriteBuffer();
 
  /**
   * Get the buffer that should be read from
   * @return
   */
- u1 * getReadBuffer();
+ Type * getReadBuffer();
 
 };
 };
