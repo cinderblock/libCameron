@@ -8,7 +8,7 @@
 #ifndef DECPRINTFORMATTER_H
 #define	DECPRINTFORMATTER_H
 
-#include "basicTypes.h"
+#include "AVR++/basicTypes.h"
 
 #include <avr/pgmspace.h>
 

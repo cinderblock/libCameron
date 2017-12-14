@@ -8,9 +8,7 @@
 #include <stdlib.h>
 #include <avr/boot.h>
 #include "DecPrintFormatter.h"
-#include "bigTypes.h"
-
-#include "USART.h"
+#include "AVR++/bigTypes.h"
 
 using namespace AVR;
 using namespace libCameron;
