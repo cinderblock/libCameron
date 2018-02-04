@@ -12,8 +12,8 @@
 using namespace AVR;
 using namespace libCameron;
 
-template<u1 size, bool readInterrupt, bool writeInterrupt>
-void TripleBuffer<size, readInterrupt, writeInterrupt>::reserveNewestBufferForReading() {
+template<typename Type, bool readInterrupt, bool writeInterrupt>
+void TripleBuffer<Type, readInterrupt, writeInterrupt>::reserveNewestBufferForReading() {
  if (readInterrupt) cli();
  switch (state) {
   default: break;
@@ -29,8 +29,8 @@ void TripleBuffer<size, readInterrupt, writeInterrupt>::reserveNewestBufferForRe
  if (readInterrupt) sei();
 }
 
-template<u1 size, bool readInterrupt, bool writeInterrupt>
-void TripleBuffer<size, readInterrupt, writeInterrupt>::markNewestBuffer() {
+template<typename Type, bool readInterrupt, bool writeInterrupt>
+void TripleBuffer<Type, readInterrupt, writeInterrupt>::markNewestBuffer() {
  if (writeInterrupt) cli();
  switch (state) {
   default: // WTF
@@ -55,8 +55,8 @@ void TripleBuffer<size, readInterrupt, writeInterrupt>::markNewestBuffer() {
  if (writeInterrupt) sei();
 }
 
-template<u1 size, bool readInterrupt, bool writeInterrupt>
-bool TripleBuffer<size, readInterrupt, writeInterrupt>::isNewData() {
+template<typename Type, bool readInterrupt, bool writeInterrupt>
+bool TripleBuffer<Type, readInterrupt, writeInterrupt>::isNewData() {
  // We don't need to lock anything here since we're only reading
  // And because of the machine's states, even if the state changes before a read
  // (and we just returned true), it will stay true until a read
@@ -75,8 +75,8 @@ bool TripleBuffer<size, readInterrupt, writeInterrupt>::isNewData() {
  return false;
 }
 
-template<u1 size, bool readInterrupt, bool writeInterrupt>
-u1* TripleBuffer<size, readInterrupt, writeInterrupt>::getWriteBuffer() {
+template<typename Type, bool readInterrupt, bool writeInterrupt>
+Type* TripleBuffer<Type, readInterrupt, writeInterrupt>::getWriteBuffer() {
  switch (state) {
   case State::A: return nullptr;
   case State::B: 
@@ -84,23 +84,23 @@ u1* TripleBuffer<size, readInterrupt, writeInterrupt>::getWriteBuffer() {
   case State::H: 
   case State::I: 
   case State::K: 
-  case State::L: return rBuffer;
+  case State::L: return &rBuffer;
   case State::C: 
   case State::E: 
   case State::J: 
   case State::O: 
-  case State::P: return gBuffer;
+  case State::P: return &gBuffer;
   case State::F: 
   case State::G: 
   case State::M: 
-  case State::N: return bBuffer;
+  case State::N: return &bBuffer;
  }
  // WTF
  return nullptr;
 }
 
-template<u1 size, bool readInterrupt, bool writeInterrupt>
-u1* TripleBuffer<size, readInterrupt, writeInterrupt>::getReadBuffer() {
+template<typename Type, bool readInterrupt, bool writeInterrupt>
+Type* TripleBuffer<Type, readInterrupt, writeInterrupt>::getReadBuffer() {
  switch (state) {
   case State::A: 
   case State::B: 
@@ -109,17 +109,16 @@ u1* TripleBuffer<size, readInterrupt, writeInterrupt>::getReadBuffer() {
   case State::E: 
   case State::F: 
   case State::N: 
-  case State::O: return rBuffer;
+  case State::O: return &rBuffer;
   case State::G: 
   case State::H: 
   case State::L: 
-  case State::M: return gBuffer;
+  case State::M: return &gBuffer;
   case State::I: 
   case State::J: 
   case State::K: 
-  case State::P: return bBuffer;
+  case State::P: return &bBuffer;
  }
  // WTF
  return nullptr;
 }
-
