@@ -8,13 +8,12 @@
 #ifndef DECPRINTFORMATTER_H
 #define	DECPRINTFORMATTER_H
 
-#include "AVR++/basicTypes.h"
+#include "basicTypes.h"
 
 #include <avr/pgmspace.h>
 
 namespace libCameron {
 
-using namespace AVR;  
 
 class DecPrintFormatter {
 private:
