@@ -10,8 +10,6 @@
 
 #include "basicTypes.h"
 
-#include <avr/pgmspace.h>
-
 namespace libCameron {
 
 
@@ -29,7 +27,6 @@ public:
  void print(s2 const word);
  void print(s4 const dword);
 
- void print(char const * str);
  void print(u1 const * ptr);
 
  inline void print(const bool bl) {print(bl ? '1' : '0');}

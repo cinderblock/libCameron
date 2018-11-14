@@ -6,11 +6,8 @@
  */
 
 #include <stdlib.h>
-#include <avr/boot.h>
 #include "DecPrintFormatter.h"
-#include "AVR++/bigTypes.h"
 
-using namespace AVR;
 using namespace libCameron;
 
 DecPrintFormatter::DecPrintFormatter(void (*const dest)(u1 const byte)) : destination(dest) {
@@ -64,15 +61,6 @@ void DecPrintFormatter::print(u4 dword) {
  }
  
  destination(dec(divresult.rem));
-}
-
-void DecPrintFormatter::print(char const * str) {
- char c;
- while (1) {
-  c = pgm_read_byte(str++);
-  if (!c) return;
-  print(c);
- }
 }
 
 void DecPrintFormatter::print(u1 const * str) {
