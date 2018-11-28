@@ -27,7 +27,7 @@ public:
   void print(s2 const word);
   void print(s4 const dword);
 
-  void print(u1 const *str);
+  void print(char const *str);
 
   inline void print(const bool bl) { print(bl ? '1' : '0'); }
 
@@ -71,11 +71,6 @@ public:
 
   inline DecPrintFormatter &operator<<(char const *str) {
     print(str);
-    return *this;
-  }
-
-  inline DecPrintFormatter &operator<<(u1 const *ptr) {
-    print(ptr);
     return *this;
   }
 

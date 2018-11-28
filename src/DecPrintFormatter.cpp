@@ -62,7 +62,7 @@ void DecPrintFormatter::print(u4 dword) {
   destination(dec(divresult.rem));
 }
 
-void DecPrintFormatter::print(u1 const *str) {
+void DecPrintFormatter::print(char const *str) {
   char c;
   while (1) {
     c = *str++;
