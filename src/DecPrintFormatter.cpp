@@ -63,10 +63,5 @@ void DecPrintFormatter::print(u4 dword) {
 }
 
 void DecPrintFormatter::print(char const *str) {
-  char c;
-  while (1) {
-    c = *str++;
-    if (!c) return;
-    print(c);
-  }
+  while (char c = *str++) print(c);
 }
