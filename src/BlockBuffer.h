@@ -12,7 +12,7 @@
 
 namespace libCameron {
 
-using namespace AVR;
+using namespace Basic;
 
 template <u1 BlockSize, u1 Blocks, bool readInterrupt, bool writeInterrupt = !readInterrupt>
 class BlockBuffer {

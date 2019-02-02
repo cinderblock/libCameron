@@ -12,6 +12,8 @@
 
 namespace libCameron {
 
+  using namespace Basic;
+
 class DecPrintFormatter {
 private:
   void (*const destination)(u1 const byte);

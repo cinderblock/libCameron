@@ -14,7 +14,7 @@
 
 namespace libCameron {
 
-using namespace AVR;
+using namespace Basic;
 
 class CRC8 {
  u1 crc;

@@ -9,7 +9,7 @@
 
 #include "TripleBuffer.h"
 
-using namespace AVR;
+using namespace Basic;
 using namespace libCameron;
 
 template<typename Type, bool readInterrupt, bool writeInterrupt>

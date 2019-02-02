@@ -9,7 +9,7 @@
 
 #include "BlockBuffer.h"
 
-using namespace AVR;
+using namespace Basic;
 using namespace libCameron;
 
 template<u1 BlockSize, u1 Blocks, bool readInterrupt, bool writeInterrupt>

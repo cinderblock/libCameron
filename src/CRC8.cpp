@@ -7,7 +7,7 @@
 
 #include "CRC8.h"
 
-using namespace AVR;
+using namespace Basic;
 using namespace libCameron;
 
 const u1 CRC8::table[256] PROGMEM = {

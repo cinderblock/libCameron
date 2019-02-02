@@ -12,7 +12,7 @@
 
 namespace libCameron {
 
-using namespace AVR;
+using namespace Basic;
 
 template <typename Type, bool readInterrupt, bool writeInterrupt = !readInterrupt>
 class TripleBuffer {

@@ -10,7 +10,7 @@
 
 #include <stdint.h>
 
-namespace libCameron {
+namespace Basic {
 
 typedef uint8_t u1;
 typedef uint16_t u2;
