@@ -22,6 +22,6 @@ typedef int16_t s2;
 typedef int32_t s4;
 typedef int64_t s8;
 
-}; // namespace libCameron
+}; // namespace Basic
 
 #endif /* BASICTYPES_H */
