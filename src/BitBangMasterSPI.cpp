@@ -1,6 +1,5 @@
 
-
-#include "BitBangMasterSPI.h"
+#include "BitBangMasterSPI.hpp"
 
 using namespace libCameron;
 

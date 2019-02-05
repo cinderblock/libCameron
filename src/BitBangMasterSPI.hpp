@@ -8,7 +8,7 @@
 #ifndef BITBANGMASTERSPI_H
 #define BITBANGMASTERSPI_H
 
-#include <AVR++/basicTypes.h>
+#include <AVR++/basicTypes.hpp>
 
 namespace libCameron {
 

@@ -8,7 +8,7 @@
 #ifndef BLOCKBUFFER_H
 #define BLOCKBUFFER_H
 
-#include <AVR++/basicTypes.h>
+#include <AVR++/basicTypes.hpp>
 
 namespace libCameron {
 

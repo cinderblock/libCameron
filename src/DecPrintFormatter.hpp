@@ -8,7 +8,7 @@
 #ifndef DECPRINTFORMATTER_H
 #define DECPRINTFORMATTER_H
 
-#include "basicTypes.h"
+#include "basicTypes.hpp"
 
 namespace libCameron {
 

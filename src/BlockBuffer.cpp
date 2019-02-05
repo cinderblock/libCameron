@@ -7,7 +7,7 @@
 
 #include <avr/interrupt.h>
 
-#include "BlockBuffer.h"
+#include "BlockBuffer.hpp"
 
 using namespace Basic;
 using namespace libCameron;

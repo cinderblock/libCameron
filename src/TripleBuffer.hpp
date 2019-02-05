@@ -8,7 +8,7 @@
 #ifndef TRIPLEBUFFER_H
 #define TRIPLEBUFFER_H
 
-#include <AVR++/basicTypes.h>
+#include <AVR++/basicTypes.hpp>
 
 namespace libCameron {
 

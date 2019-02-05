@@ -5,7 +5,7 @@
  * Created on January 12, 2016, 9:51 PM
  */
 
-#include "CRC8.h"
+#include "CRC8.hpp"
 
 using namespace Basic;
 using namespace libCameron;

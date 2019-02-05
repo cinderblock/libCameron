@@ -7,7 +7,7 @@
 
 #include <avr/interrupt.h>
 
-#include "TripleBuffer.h"
+#include "TripleBuffer.hpp"
 
 using namespace Basic;
 using namespace libCameron;

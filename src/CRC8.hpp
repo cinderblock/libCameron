@@ -8,7 +8,7 @@
 #ifndef CRC8_H
 #define CRC8_H
 
-#include <AVR++/basicTypes.h>
+#include <AVR++/basicTypes.hpp>
 
 #include <avr/pgmspace.h>
 

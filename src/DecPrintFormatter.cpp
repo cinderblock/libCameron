@@ -5,7 +5,7 @@
  * Created on December 29, 2011, 3:54 PM
  */
 
-#include "DecPrintFormatter.h"
+#include "DecPrintFormatter.hpp"
 #include <stdlib.h>
 
 using namespace libCameron;
