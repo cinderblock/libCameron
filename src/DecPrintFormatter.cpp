@@ -15,27 +15,27 @@ DecPrintFormatter::DecPrintFormatter(void (*const dest)(u1 const byte)) : destin
 void DecPrintFormatter::print(s1 byte) {
   if (byte < 0) {
     destination('-');
-    print((u1)-byte);
+    print(u1(-byte));
   } else {
-    print((u1)byte);
+    print(u1(byte));
   }
 }
 
 void DecPrintFormatter::print(s2 word) {
   if (word < 0) {
     destination('-');
-    print((u2)-word);
+    print(u2(-word));
   } else {
-    print((u2)word);
+    print(u2(word));
   }
 }
 
 void DecPrintFormatter::print(s4 dword) {
   if (dword < 0) {
     destination('-');
-    print((u4)-dword);
+    print(u4(-dword));
   } else {
-    print((u4)dword);
+    print(u4(dword));
   }
 }
 
@@ -43,7 +43,7 @@ void DecPrintFormatter::print(u2 word) {
 
   ldiv_t divresult = ldiv(word, 10);
 
-  if (divresult.quot) print((u2)divresult.quot);
+  if (divresult.quot) print(u2(divresult.quot));
 
   destination(dec(divresult.rem));
 }
@@ -55,7 +55,7 @@ void DecPrintFormatter::print(u4 dword) {
   if (divresult.quot) {
     //  if ((u4)divresult.quot <= (u4)0xffffUL) print((u2)divresult.quot); else
 
-    print((u4)divresult.quot);
+    print(u4(divresult.quot));
   }
 
   destination(dec(divresult.rem));
