@@ -1,20 +1,13 @@
-/*
- * File:   BlockBuffer.h
- * Author: Cameron
- *
- * Created on June 23, 2016, 1:32 PM
- */
+#pragma once
 
-#ifndef BLOCKBUFFER_H
-#define BLOCKBUFFER_H
-
-#include <AVR++/basicTypes.hpp>
+#include "basicTypes.hpp"
 
 namespace libCameron {
 
-using namespace Basic;
+using Basic::u1;
 
-template <u1 BlockSize, u1 Blocks, bool readInterrupt, bool writeInterrupt = !readInterrupt> class BlockBuffer {
+template <u1 BlockSize, u1 Blocks, bool readInterrupt, bool writeInterrupt = !readInterrupt>
+class BlockBuffer {
   u1 buffers[Blocks][BlockSize];
   /**
    * Index of which buffer we're currently writing to. A special value of 0xff
@@ -76,12 +69,8 @@ public:
   u1 constexpr getBlockSize() { return BlockSize; }
 
   void fixInvaildState() {
-    if (!isWriteableNow() && !isReadableNow()) {
-      currentWrite = 0;
-    }
+    if (!isWriteableNow() && !isReadableNow()) { currentWrite = 0; }
   }
 };
 
 }; // namespace libCameron
-
-#endif /* BLOCKBUFFER_H */

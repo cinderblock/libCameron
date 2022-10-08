@@ -1,18 +1,15 @@
-/*
- * File:   DecPrintFormatter.h
- * Author: Cameron Tacklind
- *
- * Created on December 29, 2011, 3:54 PM
- */
-
-#ifndef DECPRINTFORMATTER_H
-#define DECPRINTFORMATTER_H
+#pragma once
 
 #include "basicTypes.hpp"
 
 namespace libCameron {
 
-  using namespace Basic;
+using Basic::s1;
+using Basic::s2;
+using Basic::s4;
+using Basic::u1;
+using Basic::u2;
+using Basic::u4;
 
 class DecPrintFormatter {
 private:
@@ -76,12 +73,8 @@ public:
     return *this;
   }
 
-  inline DecPrintFormatter &
-  operator<<(DecPrintFormatter &(*const func)(DecPrintFormatter &)) {
-    return func(*this);
-  }
-  inline DecPrintFormatter &
-  operator<<(void (*const func)(DecPrintFormatter &)) {
+  inline DecPrintFormatter &operator<<(DecPrintFormatter &(*const func)(DecPrintFormatter &)) { return func(*this); }
+  inline DecPrintFormatter &operator<<(void (*const func)(DecPrintFormatter &)) {
     func(*this);
     return *this;
   }
@@ -94,5 +87,3 @@ private:
 };
 
 }; // namespace libCameron
-
-#endif /* DECPRINTFORMATTER_H */

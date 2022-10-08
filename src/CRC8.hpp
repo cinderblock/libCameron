@@ -1,20 +1,11 @@
-/*
- * File:   CRC8.h
- * Author: Cameron
- *
- * Created on January 12, 2016, 9:51 PM
- */
+#pragma once
 
-#ifndef CRC8_H
-#define CRC8_H
-
-#include <AVR++/basicTypes.hpp>
-
+#include "basicTypes.hpp"
 #include <avr/pgmspace.h>
 
 namespace libCameron {
 
-using namespace Basic;
+using Basic::u1;
 
 class CRC8 {
   u1 crc;
@@ -36,5 +27,3 @@ public:
 };
 
 }; // namespace libCameron
-
-#endif /* CRC8_H */

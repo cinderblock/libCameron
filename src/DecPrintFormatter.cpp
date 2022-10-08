@@ -10,8 +10,7 @@
 
 using namespace libCameron;
 
-DecPrintFormatter::DecPrintFormatter(void (*const dest)(u1 const byte))
-    : destination(dest) {}
+DecPrintFormatter::DecPrintFormatter(void (*const dest)(u1 const byte)) : destination(dest) {}
 
 void DecPrintFormatter::print(s1 byte) {
   if (byte < 0) {

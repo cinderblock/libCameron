@@ -1,20 +1,13 @@
-/*
- * File:   TripleBuffer.h
- * Author: Cameron
- *
- * Created on February 22, 2015, 5:58 PM
- */
-
-#ifndef TRIPLEBUFFER_H
-#define TRIPLEBUFFER_H
+#pragma once
 
 #include <AVR++/basicTypes.hpp>
 
 namespace libCameron {
 
-using namespace Basic;
+using Basic::u1;
 
-template <typename Type, bool readInterrupt, bool writeInterrupt = !readInterrupt> class TripleBuffer {
+template <typename Type, bool readInterrupt, bool writeInterrupt = !readInterrupt>
+class TripleBuffer {
 
   // The three buffers of the Triple Buffer
 
@@ -80,5 +73,3 @@ public:
   Type *getReadBuffer();
 };
 }; // namespace libCameron
-
-#endif /* TRIPLEBUFFER_H */

@@ -9,13 +9,12 @@
 
 #include "TripleBuffer.hpp"
 
-using namespace Basic;
+using Basic::u1;
 using namespace libCameron;
 
 template <typename Type, bool readInterrupt, bool writeInterrupt>
 void TripleBuffer<Type, readInterrupt, writeInterrupt>::reserveNewestBufferForReading() {
-  if (readInterrupt)
-    cli();
+  if (readInterrupt) cli();
   switch (state) {
   default:
     break;
@@ -40,14 +39,12 @@ void TripleBuffer<Type, readInterrupt, writeInterrupt>::reserveNewestBufferForRe
     state = State::P;
     break;
   }
-  if (readInterrupt)
-    sei();
+  if (readInterrupt) sei();
 }
 
 template <typename Type, bool readInterrupt, bool writeInterrupt>
 void TripleBuffer<Type, readInterrupt, writeInterrupt>::markNewestBuffer() {
-  if (writeInterrupt)
-    cli();
+  if (writeInterrupt) cli();
   switch (state) {
   default: // WTF
   case State::A:
@@ -86,8 +83,7 @@ void TripleBuffer<Type, readInterrupt, writeInterrupt>::markNewestBuffer() {
     state = State::K;
     break;
   }
-  if (writeInterrupt)
-    sei();
+  if (writeInterrupt) sei();
 }
 
 template <typename Type, bool readInterrupt, bool writeInterrupt>
