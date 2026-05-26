@@ -1,6 +1,6 @@
 #pragma once
 
-#include <AVR++/basicTypes.hpp>
+#include "basicTypes.hpp"
 
 namespace libCameron {
 
